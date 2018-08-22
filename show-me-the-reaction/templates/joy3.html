@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>TRY NOT TO JOY</title>
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<link href="static/css/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="static/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link href="static/css/result.css" rel="stylesheet" type="text/css" media="all" />
+<script type=text/javascript src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+<script scr="https://www.gstatic.com/firebasejs/4.7.0/firebase-app.js"></script>
+<script scr="https://www.gstatic.com/firebasejs/4.7.0/firebase-auth.js"></script>
+<script scr="https://www.gstatic.com/firebasejs/4.7.0/firebase-database.js"></script>
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script type="text/javascript" src="static/js/result.js"></script>
+
+<script type=text/javascript>
+    var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+
+</head>
+
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+        	<!--<span class="icon icon-cog"></span>-->
+			<h1><a href="#">SHOW ME THE REACTION</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="/" accesskey="1" title="">Homepage</a></li>
+				<li><a href="/reaction" accesskey="2" title="">REACTION</a></li>
+				<li class="active"><a href="/challenge" accesskey="3" title="">CAHLLENGE</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="wrapper">
+	<div id="banner" class="container">
+		<iframe id="youtube" onclick="clickYoutube();" width="960" height="500"
+				src="https://www.youtube.com/embed/vQiVMvNRC-8?rel=0&enablejsapi=1&controls=1" frameborder="0" allowfullscreen>
+		</iframe>
+	</div>
+	<div id="welcome" class="container">
+		<div class="title">
+		<h2>TRY NOT TO SMILE!</h2>
+			<div id="three-column" class="container">
+				<div><span class="arrow-down"></span></div>
+				<div id="tbox1" style="padding-left: 10px;">
+					<a href="#" class="button" onclick="setVideoName('joy', 'video3');playYoutube();">PLAY</a> </div>
+				<div id="tbox2">
+					<a href="#" class="button" onclick="pauseYoutube();">PAUSE</a> </div>
+				<div id="tbox3">
+					<a href="#" class="button" onclick="stopYoutube();">STOP</a> </div>
+				<div id="tbox4">
+					<a href="#" class="button" id="result_btn">RESULT</a> </div>
+			</div>
+		</div>
+		<div class = "modal">
+			<div class="popup">
+				<!--<img src="http://placehold.it/800x800">-->
+				<div id="all">
+					<div id="user">
+						<h2 id="challenge_result" style="padding-top:30px;"></h2>
+						<div class="chart" id="chartdiv"></div>
+					</div>
+					<div id="firebase">
+						<h2 id="firebase_result"></h2>
+						<div class="chart" id="chartdiv2"></div>
+						<div class="chart" id="chartdiv3"></div>
+					</div>
+				</div>
+				<div class="close">CLOSE</div>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+<script src="static/js/youtube.js"></script>
+
+
+
+
+</body>
+</html>

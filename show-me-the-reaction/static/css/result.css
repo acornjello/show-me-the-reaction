@@ -1,0 +1,44 @@
+	.modal {
+        position:fixed; left:50%; top:50%; transform:translate(-50%, -50%);
+		width: 1000px; height: 700px;
+        background:#F7F8E0; display: none;
+    }
+
+    .modal .popup {
+		width : 800px;
+        position:fixed; left:50%; top:50%; transform:translate(-50%, -50%);
+
+    }
+
+    .active2 {
+        display : block;
+    }
+	.active3 {
+		display : none;
+	}
+
+	.close {
+        color : #1ABC9C;
+		font-size: 15pt;
+		position: fixed;
+		top: 315px;
+		left:45%;
+    }
+	#all {
+		width: 800px;
+		height: 700px;
+		position: fixed; left:50%; top:50%; transform:translate(-50%, -50%);
+	}
+	#chartdiv {
+		margin-left:25%;
+		width: 400px;
+	}
+	#chartdiv, #chartdiv2, #chartdiv3 {
+		height: 250px;
+		font-size: 15px;
+		background-color: white;
+	}
+	#all #chartdiv2, #chartdiv3 {
+		float: left;
+		width: 50%;
+	}
